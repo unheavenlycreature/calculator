@@ -183,19 +183,34 @@ buttons.forEach(button => {
   }
 });
 
+function setBackgroundColorToBorderColor(button) {
+  button.style.backgroundColor = window
+    .getComputedStyle(button, null)
+    .getPropertyValue("border-color");
+}
+
 document.querySelector("body").addEventListener("keydown", e => {
   switch (e.key) {
     case "Enter":
       performCalculation();
+      setBackgroundColorToBorderColor(
+        buttons.find(button => button.value === "=")
+      );
       break;
     case "Backspace":
       undoLastInput();
+      setBackgroundColorToBorderColor(
+        buttons.find(button => button.value === "back")
+      );
       break;
     case "+":
     case "-":
     case "/":
     case "*":
       prepareOperation(e.key);
+      setBackgroundColorToBorderColor(
+        buttons.find(button => button.value === e.key)
+      );
       break;
     case "1":
     case "2":
@@ -209,6 +224,13 @@ document.querySelector("body").addEventListener("keydown", e => {
     case "0":
     case ".":
       buildCurrentOperand(e.key);
+      setBackgroundColorToBorderColor(
+        buttons.find(button => button.value === e.key)
+      );
       break;
   }
+});
+
+document.querySelector("body").addEventListener("keyup", e => {
+  buttons.forEach(button => (button.style.backgroundColor = ""));
 });
