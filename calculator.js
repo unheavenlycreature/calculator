@@ -178,7 +178,7 @@ buttons.forEach(button => {
 
 document.querySelector("body").addEventListener("keydown", e => {
   switch (e.key) {
-    case "=":
+    case "Enter":
       performCalculation();
       break;
     case "Backspace":
