@@ -117,9 +117,16 @@ function prepareOperation(operator) {
 }
 
 function buildCurrentOperand(digit) {
-  // Any given number can only contain one decimal point.
-  if (digit === "." && currentOperandDigits.includes(".")) {
-    return;
+  if (digit === ".") {
+    // A operand can only have one decimal point.
+    if (currentOperandDigits.includes(".")) {
+      return;
+    }
+
+    if (currentOperandDigits.length === 0) {
+      appendToDisplay("0");
+      currentOperandDigits.push("0");
+    }
   }
   appendToDisplay(`${digit}`);
   currentOperandDigits.push(digit);
