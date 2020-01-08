@@ -201,7 +201,7 @@ function setBackgroundColorToBorderColor(button) {
 
 document.querySelector("body").addEventListener("keydown", e => {
   switch (e.key) {
-    case "Enter":
+    case "=":
       performCalculation();
       setBackgroundColorToBorderColor(
         buttons.find(button => button.value === "=")
