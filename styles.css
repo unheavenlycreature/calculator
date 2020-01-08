@@ -1,7 +1,38 @@
+body {
+  background-color: #ffe0c6;
+}
+
+button {
+  font-size: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #dadada;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+button:active {
+  outline: none;
+  background-color: #dadada;
+}
+
+button:focus {
+  outline: 4px solid #dadada;
+}
+
+#add {
+  grid-area: add;
+}
+
+#back {
+  grid-area: back;
+}
+
 #calculator {
+  height: 400px;
+  width: 350px;
   display: grid;
-  grid-template-columns: auto auto auto auto;
-  grid-template-rows: auto auto auto auto;
+  grid-template-columns: auto;
+  grid-template-rows: 76px auto;
+  grid-gap: 4px;
   grid-template-areas:
     "display display display display"
     "clear clear back divide"
@@ -9,61 +40,45 @@
     "four five six subtract"
     "one two three add"
     "zero zero dot equals";
+  padding: 12px;
+  background-color: #0a0a0a;
+  margin: 60px auto auto auto;
 }
 
-#zero {
-  grid-area: zero;
-}
 #clear {
   grid-area: clear;
 }
 
-#back {
-  grid-area: back;
-}
-
 #display {
-  grid-area: display;
-  height: 40px;
-  border: 1px solid black;
+  background-color: #d3f3d3;
+  border: 1px solid #85b385;
+  font-size: 34px;
+  line-height: 76px;
+  font-family: monospace;
   grid-area: display;
   display: grid;
   justify-content: right;
   padding-right: 20px;
   padding-left: 20px;
-  font-size: 30px;
+  overflow: hidden;
 }
 
 #divide {
   grid-area: divide;
 }
 
-#multiply {
-  grid-area: multiply;
-}
-
-#add {
-  grid-area: add;
-}
-
-#equals {
-  grid-area: equals;
-}
-
-#nine {
-  grid-area: nine;
-}
-
 #eight {
   grid-area: eight;
 }
 
-#seven {
-  grid-area: seven;
+#equals {
+  background-color: #c6dfff;
+  border: 1px solid #9dc8ff;
+  grid-area: equals;
 }
 
-#six {
-  grid-area: six;
+#equals:active {
+  background-color: #9dc8ff;
 }
 
 #five {
@@ -74,6 +89,33 @@
   grid-area: four;
 }
 
+#joke {
+  margin-top: 24px;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 32px;
+}
+
+#multiply {
+  grid-area: multiply;
+}
+
+#nine {
+  grid-area: nine;
+}
+
+#one {
+  grid-area: one;
+}
+
+#seven {
+  grid-area: seven;
+}
+
+#six {
+  grid-area: six;
+}
+
 #three {
   grid-area: three;
 }
@@ -82,6 +124,15 @@
   grid-area: two;
 }
 
-#one {
-  grid-area: one;
+#zero {
+  grid-area: zero;
+}
+
+.op {
+  background-color: #ffd891;
+  border: 1px solid #ffc864;
+}
+
+.op:active {
+  background-color: #ffc864;
 }
