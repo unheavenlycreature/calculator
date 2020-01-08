@@ -18,11 +18,21 @@ function formatDecimal(num) {
   let [whole, frac] = num.toString().split(".");
   let fracArr = frac.split("");
   frac = "";
-  for (let i = 0; i < fracArr.length; i++) {
+  let numFracDigits = Math.min(8, fracArr.length);
+  for (let i = 0; i < numFracDigits; i++) {
     if (fracArr[i] === "0") {
       break;
     }
-    frac += fracArr;
+
+    let nextDigit = fracArr[i];
+    if (
+      i === numFracDigits - 1 &&
+      numFracDigits < fracArr.length &&
+      fracArr[i + 1] > 4
+    ) {
+      nextDigit++;
+    }
+    frac += nextDigit;
   }
   return `${whole}.${frac}`;
 }
