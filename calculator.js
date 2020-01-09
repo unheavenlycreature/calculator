@@ -1,4 +1,4 @@
-const INFINITY_STRING = "To infinity, and beyond!";
+const INFINITY_STRING = "To infinity & beyond!";
 const buttons = Array.from(document.querySelectorAll("button"));
 const display = document.querySelector("#display");
 

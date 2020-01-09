@@ -52,7 +52,7 @@ button:focus {
 #display {
   background-color: #d3f3d3;
   border: 1px solid #85b385;
-  font-size: 34px;
+  font-size: 22px;
   line-height: 76px;
   font-family: monospace;
   grid-area: display;
